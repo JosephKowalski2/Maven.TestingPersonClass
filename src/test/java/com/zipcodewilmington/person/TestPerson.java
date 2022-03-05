@@ -69,6 +69,39 @@ public class TestPerson {
     }
 
     @Test
+    public void testConstructorWithAllDetails() {
+        // Given
+        Integer expectedAge = 5;
+        String expectedName = "Leon";
+        String expectedDob = "08/18/1990";
+        String expectedAddress = "123 Something Lane";
+        Integer expectedPhonenumber = 1112223333;
+        Integer expectedNumofpets = 2;
+        String expectedEmail = "something@zipcode.com";
+
+        // When
+        Person person = new Person(expectedName, expectedAge, expectedDob, expectedAddress,expectedPhonenumber,
+                expectedNumofpets, expectedEmail);
+
+        // Then
+        Integer actualAge = person.getAge();
+        String actualName = person.getName();
+        String actualDob = person.getDob();
+        String actualAddress = person.getAddress();
+        Integer actualPhonenumber = person.getPhonenumber();
+        Integer actualNumofpets = person.getNumofpets();
+        String actualEmail = person.getEmail();
+
+        Assert.assertEquals(expectedAge, actualAge);
+        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedDob, actualDob);
+        Assert.assertEquals(expectedAddress, actualAddress);
+        Assert.assertEquals(expectedPhonenumber, actualPhonenumber);
+        Assert.assertEquals(expectedNumofpets, actualNumofpets);
+        Assert.assertEquals(expectedEmail, actualEmail);
+    }
+
+    @Test
     public void testSetName() {
         // Given
         Person person = new Person();
